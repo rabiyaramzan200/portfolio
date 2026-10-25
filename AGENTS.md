@@ -1,0 +1,2 @@
+- Keep the portfolio as a single scrolling TanStack route with its existing section order; responsive styling must not duplicate content or navigation destinations.
+- Define portfolio dimensions and semantic visual tokens in the global stylesheet and reuse portfolio variants of the shared Button for controls; this keeps polish consistent across screen sizes.
