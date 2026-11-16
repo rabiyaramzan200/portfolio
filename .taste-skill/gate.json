@@ -1,0 +1,60 @@
+{
+ "start": "2026-11-15T18:46:05.867Z",
+ "round": 0,
+ "idle": 0,
+ "errors": 2,
+ "status": "error",
+ "history": [
+  {
+   "at": "2026-11-15T18:46:29.935Z",
+   "mode": "manual",
+   "status": "error",
+   "fails": 0,
+   "round": 0,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-15T19:02:44.055Z",
+   "mode": "manual",
+   "status": "error",
+   "fails": 0,
+   "round": 0,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": "dist/index.html",
+  "url": null,
+  "root": "dist",
+  "kind": "service",
+  "category": "independent web design",
+  "primary": "Email studio",
+  "rounds": 3,
+  "start": "2026-11-15T18:46:05.867Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "fp": "e1ccda220f8ee95a",
+ "page": "dist/index.html",
+ "found": {
+  "fails": [],
+  "warns": [],
+  "crashed": [
+   "the copy (the page showed no <main>, <section> or <h1> to lint)",
+   "consistency.mjs gave no report (exit 1: Error: Chrome exited early (4294930433))",
+   "check.mjs could not run (exit 2: check: Chrome did not start)"
+  ],
+  "seconds": {
+   "consistency": 1,
+   "layout": 17
+  }
+ },
+ "open": [],
+ "waived": [],
+ "warnCount": 0,
+ "note": "the copy (the page showed no <main>, <section> or <h1> to lint); consistency.mjs gave no report (exit 1: Error: Chrome exited early (4294930433)); check.mjs could not run (exit 2: check: Chrome did not start)",
+ "at": "2026-11-15T19:02:44.059Z"
+}
