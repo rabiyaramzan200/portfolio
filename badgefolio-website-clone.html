@@ -114,7 +114,7 @@
   /* ---------- HERO ---------- */
   .hero{position:relative;height:200vh}
   .hero-stage{position:sticky;top:0;height:100vh;height:100svh;min-height:900px;overflow:hidden;background:var(--grad);
-    --strap:86px;--clip:58px;--bw:min(350px,80vw);--cardh:calc(var(--bw)*490/350)}
+    --strap:86px;--clip:62px;--bw:min(350px,80vw);--cardh:calc(var(--bw)*490/350)}
   .hero-stage::before{content:"";position:absolute;inset:0;background:
     radial-gradient(60% 45% at 18% 88%,rgba(214,232,240,.45),transparent 70%),
     radial-gradient(45% 35% at 88% 12%,rgba(70,98,111,.3),transparent 70%);pointer-events:none;z-index:0}
@@ -145,19 +145,20 @@
   .badge-system{position:absolute;top:0;left:0;right:0;pointer-events:none}
   .badge-system.drop{animation:badgeDrop 1.5s cubic-bezier(.25,.7,.3,1) .8s backwards}
   @keyframes badgeDrop{0%{transform:translateY(-108%)}55%{transform:translateY(1.6%)}75%{transform:translateY(-.7%)}100%{transform:translateY(0)}}
-  .strap-el{position:absolute;top:0;left:50%;width:38px;height:163px;overflow:hidden;background:linear-gradient(90deg,#5793ab,#6fa9c0 45%,#4f869e);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);transform-origin:50% 0;will-change:transform,height}
-  .strap-inner{position:absolute;top:0;left:0;width:38px;height:1100px;display:flex;align-items:flex-start;justify-content:center}
-  .strap-inner span{writing-mode:vertical-rl;font-weight:700;font-size:15px;letter-spacing:.1em;color:#10181c;white-space:nowrap;padding-top:8px}
+  .strap-el{position:absolute;top:0;left:50%;width:30px;height:163px;overflow:hidden;background:#5b8ba0;transform-origin:50% 0;will-change:transform,height}
+  .strap-inner{position:absolute;inset:0;width:30px;height:100%;display:flex;align-items:center;justify-content:center}
+  .strap-inner span{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:clamp(8px,1vw,14px);letter-spacing:.1em;color:#10181c;white-space:nowrap}
   .card-wrap{position:absolute;left:50%;pointer-events:auto;will-change:transform}
   .clip{display:flex;justify-content:center;height:62px;position:relative;z-index:3}
-  .badge{position:relative;width:var(--bw,350px);aspect-ratio:350/490;border-radius:18px;padding:26px 26px 20px;margin-top:-6px;
+  .clip::after{content:"";position:absolute;top:57px;left:50%;width:32px;height:12px;border-radius:50%;background:rgba(17,39,49,.34);filter:blur(5px);transform:translateX(-50%);pointer-events:none}
+  .metal-clip{position:relative;z-index:1;width:52px;height:72px;display:block;filter:drop-shadow(0 4px 4px rgba(17,39,49,.24))}
+  .badge{position:relative;width:var(--bw,350px);aspect-ratio:350/490;border-radius:18px;padding:26px 26px 20px;margin-top:0;
     background:var(--badge-grad);
     box-shadow:0 30px 60px -18px rgba(20,40,52,.45),inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 0 1px rgba(255,255,255,.18);
     overflow:hidden;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
   .badge.dragging{cursor:grabbing}
   .badge::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,0) 34%,rgba(255,255,255,.12) 62%,rgba(255,255,255,0) 80%);pointer-events:none}
-  .badge .slot{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:58px;height:11px;border-radius:99px;background:rgba(16,32,40,.55);box-shadow:inset 0 2px 3px rgba(0,0,0,.5)}
-  .badge h2{margin:22px 0 0;font-size:42px;line-height:.94;font-weight:900;letter-spacing:-.01em;color:#0A0A0A;position:relative;z-index:2}
+  .badge h2{margin:18px 0 0;font-size:42px;line-height:.94;font-weight:900;letter-spacing:-.01em;color:#0A0A0A;position:relative;z-index:2}
   .badge h2 em{font-style:normal;color:#fff;display:block}
   .badge .photo{margin:10px auto 0;width:calc(74% + 40px);max-width:100%;border-radius:10px;overflow:hidden;position:relative;z-index:1;box-shadow:0 10px 24px rgba(15,35,45,.25)}
   .badge .photo img{display:block;width:100%;aspect-ratio:1.1;object-fit:cover;object-position:50% 18%;filter:grayscale(1) contrast(1.05);pointer-events:none}
@@ -319,7 +320,7 @@
     .stat{min-height:190px}
   }
   @media (max-width:560px){
-    .hero-stage{--strap:70px;min-height:840px}
+    .hero-stage{--strap:104px;min-height:840px}
     .hero-title{line-height:.82em}
     .hero-tags{flex-direction:column;align-items:center;text-align:center}
     .hero-tags p{max-width:320px}
@@ -376,7 +377,7 @@
     .foot-giant .gap{display:none}
     .foot-giant .w-left{transform:translateX(-72px)}
     .foot-giant .w-right{transform:translateX(72px)}
-    .foot-badge{order:2;position:relative;top:auto;left:auto;right:auto;z-index:1;width:100%;height:clamp(402px,108vw,424px);--bw:min(190px,52vw);--strap:72px}
+    .foot-badge{order:2;position:relative;top:auto;left:auto;right:auto;z-index:1;width:100%;height:clamp(440px,116vw,456px);--bw:min(190px,52vw);--strap:104px}
     .foot-badge .badge-system{position:relative;top:auto;left:auto;right:auto;width:100%;height:100%}
     .foot-top{order:3;z-index:2;width:100%;padding:24px 24px 0;display:flex;flex-direction:column;align-items:center;gap:26px}
     .foot-menu nav{align-items:center;gap:4px}
@@ -392,7 +393,7 @@
     .menu-btn{top:12px;right:12px;width:52px;height:48px}
     .menu-panel{height:100svh;overflow-y:auto;padding:82px 0 34px}
     .menu-links a{font-size:30px;min-height:44px;display:flex;align-items:center}
-    .hero-stage{--strap:70px;--clip:58px;--bw:min(240px,calc(100vw - 48px));--cardh:calc(var(--bw)*490/350);min-height:840px}
+    .hero-stage{--strap:104px;--clip:62px;--bw:min(240px,calc(100vw - 48px));--cardh:calc(var(--bw)*490/350);min-height:840px}
     .hero-title{margin:calc(var(--strap) + var(--clip) + var(--cardh) + 24px) 0 0;font-size:clamp(3.7rem,16.8vw,4.7rem);line-height:.82em}
     .hero-tags{margin-top:18px;width:calc(100% - 40px);gap:7px}
     .hero-tags .hero-intro{font-size:clamp(18px,5.1vw,20px)}
@@ -454,19 +455,25 @@
     </div>
     <div class="badge-pin" id="badgePin">
       <div class="badge-system drop" data-badge-system="hero">
-        <div class="strap-el"><div class="strap-inner"><span>RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN</span></div></div>
+        <div class="strap-el" aria-hidden="true"><div class="strap-inner"><span>RABIA RAMZAN</span></div></div>
         <div class="card-wrap">
           <div class="clip">
-            <svg width="46" height="64" viewBox="0 0 52 72" fill="none" aria-hidden="true">
-              <circle cx="26" cy="14" r="12" fill="#7d97a5"/>
-              <circle cx="26" cy="14" r="10" stroke="#d7dde1" stroke-width="5"/>
-              <path d="M18 22 h16 l-2 10 h-12 z" fill="#aeb6bb"/>
-              <path d="M26 32 v10" stroke="#8d959a" stroke-width="5" stroke-linecap="round"/>
-              <path d="M26 42 c8 2 6 10 1 14 c-4 3-9 1-9-3" stroke="#9aa3a8" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <svg class="metal-clip" viewBox="0 0 52 72" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="silver-hero" x1="7" y1="8" x2="45" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#f2f5f7"/><stop offset=".28" stop-color="#d7dde1"/><stop offset=".66" stop-color="#9aa3a8"/><stop offset="1" stop-color="#7d97a5"/></linearGradient>
+                <linearGradient id="steel-hero" x1="16" y1="30" x2="36" y2="64" gradientUnits="userSpaceOnUse"><stop stop-color="#f7fafb"/><stop offset=".42" stop-color="#b9c2c7"/><stop offset="1" stop-color="#74848c"/></linearGradient>
+              </defs>
+              <ellipse cx="26" cy="11.5" rx="9" ry="6.5" stroke="url(#silver-hero)" stroke-width="4"/>
+              <path d="M19 10c2-3 7-4 11-2" stroke="#fff" stroke-opacity=".82" stroke-width="1.4" stroke-linecap="round"/>
+              <ellipse cx="26" cy="28.5" rx="12.5" ry="8.5" stroke="url(#silver-hero)" stroke-width="4.5"/>
+              <path d="M16.5 26c2.9-4.2 9.9-5.8 15.2-3.1" stroke="#fff" stroke-opacity=".72" stroke-width="1.35" stroke-linecap="round"/>
+              <path d="M26 37v19c0 7.8-4.2 13.4-10.2 13.4-4.4 0-6.6-2.8-5.5-6.7.9-3.1 3.9-5.1 7.5-5.1h4.2" stroke="url(#steel-hero)" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M29.6 38v19.5c0 6.3-3.6 11.3-8.5 12.7" stroke="#6d7b82" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M24 38.2v16.7c0 5.7-2.4 9.3-5.6 10.7" stroke="#fff" stroke-opacity=".64" stroke-width="1.25" stroke-linecap="round"/>
+              <path d="M16.2 61.1h7.4" stroke="#75838a" stroke-width="2.1" stroke-linecap="round"/>
             </svg>
           </div>
           <div class="badge" title="Drag the badge">
-            <div class="slot"></div>
             <h2>RABIA <em>RAMZAN</em></h2>
             <div class="photo"><img src="assets/rabia/rabia-ramzan.webp" alt="Portrait of Rabia Ramzan" /></div>
             <p class="badge-tagline">Design with purpose.</p>
@@ -659,19 +666,25 @@
 <footer id="footer">
   <div class="foot-badge">
     <div class="badge-system" data-badge-system="footer">
-      <div class="strap-el"><div class="strap-inner"><span>RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN&nbsp;&nbsp;•&nbsp;&nbsp;RABIA RAMZAN</span></div></div>
+      <div class="strap-el" aria-hidden="true"><div class="strap-inner"><span>RABIA RAMZAN</span></div></div>
       <div class="card-wrap">
         <div class="clip">
-          <svg width="46" height="64" viewBox="0 0 52 72" fill="none" aria-hidden="true">
-            <circle cx="26" cy="14" r="12" fill="#7d97a5"/>
-            <circle cx="26" cy="14" r="10" stroke="#d7dde1" stroke-width="5"/>
-            <path d="M18 22 h16 l-2 10 h-12 z" fill="#aeb6bb"/>
-            <path d="M26 32 v10" stroke="#8d959a" stroke-width="5" stroke-linecap="round"/>
-            <path d="M26 42 c8 2 6 10 1 14 c-4 3-9 1-9-3" stroke="#9aa3a8" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <svg class="metal-clip" viewBox="0 0 52 72" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="silver-footer" x1="7" y1="8" x2="45" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#f2f5f7"/><stop offset=".28" stop-color="#d7dde1"/><stop offset=".66" stop-color="#9aa3a8"/><stop offset="1" stop-color="#7d97a5"/></linearGradient>
+              <linearGradient id="steel-footer" x1="16" y1="30" x2="36" y2="64" gradientUnits="userSpaceOnUse"><stop stop-color="#f7fafb"/><stop offset=".42" stop-color="#b9c2c7"/><stop offset="1" stop-color="#74848c"/></linearGradient>
+            </defs>
+            <ellipse cx="26" cy="11.5" rx="9" ry="6.5" stroke="url(#silver-footer)" stroke-width="4"/>
+            <path d="M19 10c2-3 7-4 11-2" stroke="#fff" stroke-opacity=".82" stroke-width="1.4" stroke-linecap="round"/>
+            <ellipse cx="26" cy="28.5" rx="12.5" ry="8.5" stroke="url(#silver-footer)" stroke-width="4.5"/>
+            <path d="M16.5 26c2.9-4.2 9.9-5.8 15.2-3.1" stroke="#fff" stroke-opacity=".72" stroke-width="1.35" stroke-linecap="round"/>
+            <path d="M26 37v19c0 7.8-4.2 13.4-10.2 13.4-4.4 0-6.6-2.8-5.5-6.7.9-3.1 3.9-5.1 7.5-5.1h4.2" stroke="url(#steel-footer)" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M29.6 38v19.5c0 6.3-3.6 11.3-8.5 12.7" stroke="#6d7b82" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M24 38.2v16.7c0 5.7-2.4 9.3-5.6 10.7" stroke="#fff" stroke-opacity=".64" stroke-width="1.25" stroke-linecap="round"/>
+            <path d="M16.2 61.1h7.4" stroke="#75838a" stroke-width="2.1" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="badge" title="Drag the badge">
-          <div class="slot"></div>
           <h2>RABIA <em>RAMZAN</em></h2>
           <div class="photo"><img src="assets/rabia/rabia-ramzan.webp" alt="Portrait of Rabia Ramzan" /></div>
           <p class="badge-tagline">Design with purpose.</p>
@@ -733,7 +746,7 @@
   /* Content and local-image migration: keep the clone's badge mechanics,
      layout and motion while replacing its visible portfolio data. */
   document.querySelectorAll('[data-badge-system] .badge h2').forEach(function(name){ name.innerHTML = 'RABIA <em>RAMZAN</em>'; });
-  document.querySelectorAll('[data-badge-system] .strap-inner span').forEach(function(strap){ strap.textContent = 'RABIA RAMZAN  •  RABIA RAMZAN  •  RABIA RAMZAN  •  RABIA RAMZAN  •  RABIA RAMZAN'; });
+  document.querySelectorAll('[data-badge-system] .strap-inner span').forEach(function(strap){ strap.textContent = 'RABIA RAMZAN'; });
   document.querySelectorAll('[data-badge-system] .photo img, .about-photo img').forEach(function(image){ image.src = rabiaPortrait; image.alt = 'Portrait of Rabia Ramzan'; });
   document.querySelectorAll('a[href^="mailto:"]').forEach(function(link){ link.href = 'mailto:' + rabiaEmail; if(link.textContent.indexOf('@') !== -1) link.textContent = rabiaEmail; });
   var footerNav = document.querySelector('footer .foot-menu nav');
@@ -896,12 +909,12 @@
   }
   var heroBadgeState = null, footBadgeState = null;
   function badgeRestTop(isHero){
-    if(window.innerWidth <= 560 && isHero) return 70;
+    if(window.innerWidth <= 560 && isHero) return 104;
     return isHero ? 86 : 163;
   }
   /* On tablet/mobile the footer badge sits in a reserved flow container;
      shortening its rest point keeps the lanyard inside that space. */
-  function footBadgeRestTop(){ return window.innerWidth <= 768 ? 72 : 163; }
+  function footBadgeRestTop(){ return window.innerWidth <= 768 ? 104 : 163; }
   if(!reduce){
     heroBadgeState = makeDraggable(document.querySelector('[data-badge-system="hero"]'),
       { restTop: badgeRestTop(true), isHero: true, cardW: 350, springK: 115, springD: 5.2, tiltK: 26, tiltD: 2.1, maxTilt: 8 });
